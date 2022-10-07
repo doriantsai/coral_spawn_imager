@@ -1,0 +1,15 @@
+<launch>
+    <node
+        pkg="coral_spawn_imager"
+        type="camera_publisher.py"
+        name="cam_pub"
+        output="screen"
+    />
+
+    <node
+        pkg="coral_spawn_imager"
+        type="camera_subscriber.py"
+        name="cam_sub"
+        output="screen"
+    />
+</launch>
