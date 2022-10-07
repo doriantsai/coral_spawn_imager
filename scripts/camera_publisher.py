@@ -37,7 +37,7 @@ def imager():
     picam = PiCamera()
     picam.iso = 800
     picam.sensor_mode = 2
-    picam.resolution = (2592, 1944)
+    picam.resolution = (648, 486)
     picam.shutter_speed = 100000 # 100 ms
     time.sleep(2) # cam some time to adjust to conditions
 

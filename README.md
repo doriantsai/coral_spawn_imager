@@ -69,7 +69,7 @@ As part of the Reef Restoration and Adaptation Program (RRAP), the Coral Spawn a
 
 - coral_spawn_imager should be operational. Whenver changes to the packages are made, you need to recompile with catkin_make and source. 
 
- ## Usage Instructions
+## Usage Instructions
 
 Running the camera publisher:
 
@@ -79,4 +79,25 @@ Running the camera subscriber:
 
       rosrun coral_spawn_imager camera_subscriber.py
 
+## ROS Multple Computer Setup
 
+- We refer to http://wiki.ros.org/ROS/NetworkSetup for the ROS network setup
+- In each computer, use `ifconfig` to get the ip addresses. Let's say we got 192.168.1.100 for the main `cslics` computer and 192.168.1.200 for `pi` imaging device. On both computers, set the hostnames:
+
+      sudo vim /etc/hosts
+
+  And set `cslics 192.168.1.100` and on the next line, `pi 192.168.1.200`.
+
+- Ensure each computer can ping each other
+- On the main cslics computer: (note: unsure why ROS_IP has to be a valid IPv4/v6 address, can't it just use the alias from /etc/hosts? I got errors otherwise)
+
+      export ROS_IP=192.168.1.100
+      export ROS_MASTER_URI=http://cslics:11311/
+      roscore
+
+- On the imaging device:
+
+      export ROS_IP=192.168.1.200
+      export ROS_MASTER_URI=http://cslics:11311/
+
+- Then we should be able to run the publisher on the `pi`, and see the topics and read the values of the topics on the `cslics` computer
