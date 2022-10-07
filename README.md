@@ -49,8 +49,34 @@ As part of the Reef Restoration and Adaptation Program (RRAP), the Coral Spawn a
 
       sudo src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/noetic -j1 -DPYTHON_EXECUTABLE=/usr/bin/python3
       
- - Clone this repo: (TODO)
+- Create a ROS workspace:
+
+      mkdir ~/cslics_ws/src
+      cd ~/cslics_ws/src
  
+- Clone this repo in the src directory. Note: might have to use the HTTPS if you don't have SSH access to the repo.
+
+      git clone git@github.com:doriantsai/coral_spawn_imager.git
+
+- Compile the catkin workspace
+
+      cd ~/cslics_ws
+      catkin_make
+
+- Source the workspace and packages within
+
+      source ~/cslics_ws/devel/setup.bash
+
+- coral_spawn_imager should be operational. Whenver changes to the packages are made, you need to recompile with catkin_make and source. 
+
  ## Usage Instructions
- 
- In progress
+
+Running the camera publisher:
+
+      rosrun coral_spawn_imager camera_publisher.py
+
+Running the camera subscriber:
+
+      rosrun coral_spawn_imager camera_subscriber.py
+
+
