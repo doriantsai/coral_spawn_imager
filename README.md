@@ -21,7 +21,7 @@ As part of the Reef Restoration and Adaptation Program (RRAP), the Coral Spawn a
 
 ## Installation Instructions
 
-- Use raspberry Pi Imager for Raspbian OS Buster (legacy), because this has documented ROS Noetic support, while Bullseye does not
+- Use raspberry Pi Imager for Raspbian OS Buster (legacy), because this has documented ROS Noetic support, while Bullseye does not. Consider migrating to Ubuntu 20.04 with picamera2, which is soon to be supported.
 - `sudo raspi-config` to enable ssh and legacy camera stack
 - Increase swap RAM to 1GB for faster compiles:
 
