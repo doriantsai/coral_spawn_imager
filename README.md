@@ -2,6 +2,8 @@
 
 As part of the Reef Restoration and Adaptation Program (RRAP), the Coral Spawn and Larvae Imaging Camera System (CSLICS) is a camera system aimed at capturing images of coral spawn for research and analysis. This coral_spawn_imager repo is specifically the code for camera control, image capture and scheduling.
 
+## MIGRATED TO https://github.com/Coral-Imaging/coral_spawn_imager
+
 
 ## Hardware
 
